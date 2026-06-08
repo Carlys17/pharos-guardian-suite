@@ -54,6 +54,7 @@ Pharos Guardian Suite
 - **Explorer:** `https://atlantic.pharosscan.xyz/`
 - **Payment:** x402 Protocol (HTTP 402 micro-payments)
 - **Agent Protocol:** MCP (Model Context Protocol)
+- **Agent Framework:** Anvita Flow (Phase 2 composition)
 - **Smart Contracts:** Solidity ^0.8.20 + Hardhat
 - **SDK:** viem (EVM interactions)
 

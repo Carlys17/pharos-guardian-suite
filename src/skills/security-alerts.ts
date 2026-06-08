@@ -183,8 +183,38 @@ export async function checkAlerts(
             toBlock: currentBlock,
           });
 
-          // Filter for transfers involving watched address
-          // In production: parse Transfer events properly
+          // Check for native ETH transfers by looking at tx value
+          for (const log of logs) {
+            try {
+              const tx = await client.getTransaction({ hash: log.transactionHash });
+              if (tx && tx.from && tx.to) {
+                const fromMatch = tx.from.toLowerCase() === rule.watchAddress;
+                const toMatch = tx.to.toLowerCase() === rule.watchAddress;
+                if (fromMatch || toMatch) {
+                  const valueETH = parseFloat(formatEther(tx.value));
+                  if (valueETH >= rule.minAmountETH) {
+                    const alert: SecurityAlert = {
+                      id: `alert_${++alertCounter}`,
+                      ruleId: rule.id,
+                      type: "large_transfer",
+                      severity: valueETH >= rule.minAmountETH * 10 ? "critical" : "warning",
+                      watchAddress: rule.watchAddress,
+                      description: `Large ETH transfer detected: ${valueETH.toFixed(4)} ETH ${fromMatch ? 'FROM' : 'TO'} ${rule.watchAddress}`,
+                      txHash: log.transactionHash,
+                      blockNumber: Number(log.blockNumber),
+                      amount: valueETH.toFixed(6),
+                      counterparty: fromMatch ? tx.to : tx.from,
+                      timestamp: Date.now(),
+                      chain: "Pharos (688689)",
+                    };
+                    newAlerts.push(alert);
+                  }
+                }
+              }
+            } catch {
+              // Individual tx fetch failed, continue
+            }
+          }
         } catch {
           // Block range too large or RPC error
         }

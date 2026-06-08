@@ -75,7 +75,15 @@ The 4 skills are designed to work independently AND together:
 - **On-chain payments:** x402 micro-payment settlement on Pharos
 - **AI Agent economy:** MCP-compatible skills any agent can call
 - **Composable infrastructure:** Skills as building blocks for the Pharos agent ecosystem
+- **Anvita Flow ready:** Skills designed for Phase 2 composition via Anvita Flow agent framework
 - **Real utility:** Actual DeFi security needs, not just demos
+
+## Phase 2 Roadmap
+- **Anvita Flow Integration:** Compose all 4 skills into a full Guardian Agent via Anvita Flow
+- **On-chain Verification:** Full x402 payment verification via PaywallRegistry contract
+- **Real-time Indexing:** WebSocket subscriptions for instant alert detection
+- **DEX Integration:** Live yield position tracking from Pharos DEXs
+- **Agent Autonomy:** Self-executing security responses (freeze, alert, migrate)
 
 ## Links
 - **GitHub:** https://github.com/Carlys17/pharos-guardian-suite
