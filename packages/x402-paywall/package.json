@@ -1,0 +1,20 @@
+{
+  "name": "@pharos-guardian/x402-paywall",
+  "version": "1.0.0",
+  "description": "Skill 3: x402 micro-payment paywall for skill monetization on Pharos",
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "scripts": {
+    "build": "tsc",
+    "test": "tsx src/__tests__/index.test.ts",
+    "start": "tsx src/index.ts"
+  },
+  "dependencies": {
+    "@x402/core": "^1.0.0",
+    "@x402/express": "^1.0.0",
+    "@x402/evm": "^1.0.0",
+    "@x402/fetch": "^1.0.0",
+    "express": "^4.18.0",
+    "viem": "^2.0.0"
+  }
+}

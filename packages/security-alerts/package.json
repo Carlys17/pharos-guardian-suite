@@ -1,0 +1,16 @@
+{
+  "name": "@pharos-guardian/security-alerts",
+  "version": "1.0.0",
+  "description": "Skill 4: Real-time on-chain security alert monitoring for Pharos",
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "scripts": {
+    "build": "tsc",
+    "test": "tsx src/__tests__/index.test.ts",
+    "start": "tsx src/index.ts"
+  },
+  "dependencies": {
+    "viem": "^2.0.0",
+    "zod": "^3.22.0"
+  }
+}

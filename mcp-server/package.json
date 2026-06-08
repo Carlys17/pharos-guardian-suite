@@ -1,0 +1,20 @@
+{
+  "name": "@pharos-guardian/mcp-server",
+  "version": "1.0.0",
+  "description": "Unified MCP server for all 4 Pharos Guardian skills",
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "scripts": {
+    "build": "tsc",
+    "start": "tsx src/index.ts",
+    "test": "tsx src/__tests__/index.test.ts"
+  },
+  "dependencies": {
+    "@modelcontextprotocol/sdk": "^1.0.0",
+    "@pharos-guardian/contract-auditor": "1.0.0",
+    "@pharos-guardian/portfolio-analytics": "1.0.0",
+    "@pharos-guardian/x402-paywall": "1.0.0",
+    "@pharos-guardian/security-alerts": "1.0.0",
+    "zod": "^3.22.0"
+  }
+}

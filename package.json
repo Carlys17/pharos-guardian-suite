@@ -1,0 +1,29 @@
+{
+  "name": "pharos-guardian-suite",
+  "version": "1.0.0",
+  "description": "4 Composable AI Agent Skills for Pharos Blockchain — Contract Auditor, Portfolio Analytics, x402 Paywall, Security Alerts",
+  "private": true,
+  "workspaces": [
+    "packages/*",
+    "mcp-server"
+  ],
+  "scripts": {
+    "build": "npm run build --workspaces",
+    "test": "npm run test --workspaces --if-present",
+    "start:mcp": "cd mcp-server && npm start",
+    "deploy:pharos": "npx hardhat run scripts/deploy.ts --network pharos",
+    "lint": "eslint packages/ mcp-server/ --ext .ts"
+  },
+  "devDependencies": {
+    "@nomicfoundation/hardhat-toolbox": "^4.0.0",
+    "@types/node": "^20.0.0",
+    "eslint": "^8.0.0",
+    "hardhat": "^2.19.0",
+    "typescript": "^5.3.0",
+    "tsx": "^4.7.0"
+  },
+  "dependencies": {
+    "viem": "^2.0.0",
+    "zod": "^3.22.0"
+  }
+}
