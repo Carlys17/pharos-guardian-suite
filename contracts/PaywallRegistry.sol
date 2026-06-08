@@ -12,7 +12,7 @@ contract PaywallRegistry {
         string description;
         bool active;
         uint256 totalEarnings;
-        uint26 totalCalls;
+        uint256 totalCalls;
     }
 
     mapping(bytes32 => SkillEndpoint) public endpoints;
