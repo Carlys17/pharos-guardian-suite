@@ -119,6 +119,17 @@ pharos-guardian-suite/
 └── README.md
 ```
 
+## 🌐 Deployed Contracts (Pharos Atlantic Testnet)
+
+| Contract | Address | Explorer |
+|----------|---------|----------|
+| **PaywallRegistry** | `0xDe8201f249656ac0B5a76B490FbF78A4cCa941BB` | [View](https://atlantic.pharosscan.xyz/address/0xDe8201f249656ac0B5a76B490FbF78A4cCa941BB) |
+| **AlertRegistry** | `0x19813D6B80d45772cd6f72f5562d19CA72F38d95` | [View](https://atlantic.pharosscan.xyz/address/0x19813D6B80d45772cd6f72f5562d19CA72F38d95) |
+
+- **Network:** Pharos Atlantic Testnet (Chain ID: 688689)
+- **RPC:** `https://atlantic.dplabs-internal.com`
+- **Deployer:** `0x5A61C567935c913B82C8c6f562333fF5aAdAA835`
+
 ## 🏆 Hackathon Alignment
 
 | Criteria | How We Deliver |
