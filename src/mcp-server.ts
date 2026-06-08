@@ -19,26 +19,26 @@ import { StdioServerTransport } from "@modelcontextprotocol/sdk/server/stdio.js"
 import {
   CONTRACT_AUDITOR_TOOL,
   AuditInputSchema,
-} from "../../packages/contract-auditor/src/index.js";
+} from "./skills/contract-auditor.js";
 
 import {
   PORTFOLIO_ANALYTICS_TOOL,
   PortfolioInputSchema,
-} from "../../packages/portfolio-analytics/src/index.js";
+} from "./skills/portfolio-analytics.js";
 
 import {
   PAYWALL_TOOL,
   VERIFY_PAYMENT_TOOL,
   CreatePaywallInputSchema,
   VerifyPaymentInputSchema,
-} from "../../packages/x402-paywall/src/index.js";
+} from "./skills/x402-paywall.js";
 
 import {
   CREATE_ALERT_RULE_TOOL,
   CHECK_ALERTS_TOOL,
   CreateAlertRuleInputSchema,
   CheckAlertsInputSchema,
-} from "../../packages/security-alerts/src/index.js";
+} from "./skills/security-alerts.js";
 
 // ============================================================
 // MCP Server Setup
