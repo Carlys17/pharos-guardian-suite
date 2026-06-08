@@ -69,8 +69,9 @@ test("Clean contract scores 100", () => {
     // SPDX-License-Identifier: MIT
     pragma solidity 0.8.28;
     contract Clean {
+      event ValueChanged(uint256 newValue);
       uint256 public value;
-      function setValue(uint256 v) external { value = v; }
+      function setValue(uint256 v) external { value = v; emit ValueChanged(v); }
     }
   `;
   const report = auditContract(code, "Clean");
@@ -81,9 +82,12 @@ test("Multiple vulnerabilities detected", () => {
   const code = `
     pragma solidity ^0.8.20;
     contract Bad {
+      mapping(address => uint256) public balances;
       function withdraw() external {
-        (bool s, ) = msg.sender.call{value: 1}("");
+        uint256 bal = balances[msg.sender];
+        (bool s, ) = msg.sender.call{value: bal}("");
         require(s);
+        balances[msg.sender] = 0;
       }
       function check() external view {
         if (tx.origin == address(0)) return;
@@ -132,6 +136,7 @@ test("Duplicate paywall throws", () => {
       priceUSDC: "0.02",
       description: "Duplicate",
       payToAddress: "0x1234",
+      network: "eip155:688689",
     });
     assert(false, "Should have thrown");
   } catch (e: any) {

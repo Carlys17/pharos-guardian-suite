@@ -60,7 +60,7 @@ const VULNERABILITY_RULES: VulnerabilityRule[] = [
     id: "REENTRANCY",
     name: "Reentrancy Vulnerability",
     severity: "critical",
-    pattern: /\.call\{value:.*\}.*\n.*(?:balance|transfer|send)/gm,
+    pattern: /\.call\{value[\s\S]{0,200}\}[^}]*?(?:balance|balances|transfer|send)/gim,
     description: "External call before state update — classic reentrancy vector",
     recommendation: "Use ReentrancyGuard from OpenZeppelin or follow checks-effects-interactions pattern",
     cweId: "CWE-841",
